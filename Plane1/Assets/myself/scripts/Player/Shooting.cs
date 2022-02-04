@@ -8,6 +8,8 @@ public class Shooting : MonoBehaviour
     public GameObject bullet;
     public GameObject bullet2;
 
+    public GameObject target;
+
     private int timer=0;
  
     // 弾丸の速度
@@ -20,11 +22,18 @@ public class Shooting : MonoBehaviour
 	void Start () {
         trans=GameObject.Find("FireR").transform;
         trans2=GameObject.Find("FireL").transform;
+
+        trans.transform.LookAt(target.transform);
+        trans2.transform.LookAt(target.transform);
 	}
 	
 	// Update is called once per frame
 	void Update () {
         // z キーが押された時
+
+        trans.transform.LookAt(target.transform);
+        trans2.transform.LookAt(target.transform);
+
         if (Input.GetKey ("joystick button 1")){
             if(timer==0)
             {
@@ -34,8 +43,6 @@ public class Shooting : MonoBehaviour
  
             Vector3 force;
  
-            force = GameObject.Find("Player1").gameObject.transform.forward * speed;
-
             Vector3 worldPos = trans.position;
             Vector3 worldPos2 = trans2.position;
             //worldPos.x += 6.2f;    // ワールド座標を基準にした、x座標を1に変更
@@ -47,7 +54,9 @@ public class Shooting : MonoBehaviour
 
 
             // Rigidbodyに力を加えて発射
+            force = GameObject.Find("FireR").gameObject.transform.forward * speed;
             bullets.GetComponent<Rigidbody>().AddForce(force,ForceMode.Impulse);
+            force = GameObject.Find("FireL").gameObject.transform.forward * speed;
             bullets2.GetComponent<Rigidbody>().AddForce(force,ForceMode.Impulse);
             timer++;
             }
