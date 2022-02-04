@@ -12,6 +12,7 @@ public class RotateSkyV2 : MonoBehaviour
 
     Transform myTransform;
     Transform worldtransform;
+    Transform xwing;
     Vector3 localAngle;
     Vector3 worldangle;
 
@@ -25,12 +26,15 @@ public class RotateSkyV2 : MonoBehaviour
     private bool turnL=false;
     private float TURN=0;//2右　1左
 
+    private float easeadd=0.0f;
+
 	// Use this for initialization
 	void Start () {
         //　Lighting Settingsで指定したスカイボックスのマテリアルを取得
         skyboxMaterial = RenderSettings.skybox;
         myTransform = GameObject.Find("Player1").transform;
         worldtransform=GameObject.Find("Main (1)").transform;
+        xwing=GameObject.Find("Main (1)").transform;
         //worldtransform=GameObject.Find("Player1").transform;
     }
 	
@@ -132,7 +136,25 @@ public class RotateSkyV2 : MonoBehaviour
         myTransform.localEulerAngles=localAngle;
 
         }
+        if(lsv>0)//上昇
+        {
+            Vector3 xwingz=xwing.localEulerAngles;
+            xwingz.x-=easeadd;
+            if(xwingz.x>275||xwingz.x<265)xwing.localEulerAngles=xwingz;
+        }
+        else if(lsv<0)//下降
+        {
+            Vector3 xwingz=xwing.localEulerAngles;
+            xwingz.x+=easeadd;
+            if(xwingz.x<85||xwingz.x>275)xwing.localEulerAngles=xwingz;
+        }
+        else easeadd=0;
 
+        Debug.Log(easeadd);
+
+        if(easeadd<1.2f)easeadd+=0.03f;
+        //従来手法の上下
+        /*
         if(lsv>0)
         {
         localAngle = myTransform.localEulerAngles;
@@ -165,5 +187,6 @@ public class RotateSkyV2 : MonoBehaviour
 
             myTransform.localEulerAngles=localAngle;
         }
+        */
 	}
 }

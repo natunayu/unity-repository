@@ -26,7 +26,7 @@ public class moveAim : MonoBehaviour
         rsh = Input.GetAxis ("R_Stick_H");
         rsv = Input.GetAxis ("R_Stick_V");
 
-        Debug.Log(rsh);
+        //Debug.Log(rsh);
 
         float addx=rsh*1.0f;
         float addy=rsv*-1.0f;
