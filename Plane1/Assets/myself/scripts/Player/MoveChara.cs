@@ -6,10 +6,13 @@ public class MoveChara : MonoBehaviour
 {
     public float speed = 10.0f;
         public Rigidbody rb;
+        private MoveChara characterController;
+        private Vector3 velocity;
 
         void Start() 
         {
             rb = GameObject.Find("Main (1)").GetComponent<Rigidbody>();
+            
             //rb = GameObject.Find("Player1").GetComponent<Rigidbody>();
         }
  
