@@ -28,6 +28,10 @@ public class RotateSkyV2 : MonoBehaviour
 
     private float easeadd=0.0f;
 
+    private bool keyboard=false;//操作方法についてキーボードかコントローラか
+    //Shooting にも同じスクリプトがある
+    //MoveChara,moveAimにも同じスクリプトがある
+
 	// Use this for initialization
 	void Start () {
         //　Lighting Settingsで指定したスカイボックスのマテリアルを取得
@@ -41,11 +45,12 @@ public class RotateSkyV2 : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 
+        skyboxMaterial.SetFloat("_Rotation", Mathf.Repeat(skyboxMaterial.GetFloat("_Rotation") - rotateSpeed* Time.deltaTime, 360f));
+
+    if(keyboard==false)//コントローサ操作の時
+    {
         float lsh = Input.GetAxis ("L_Stick_H");//左スティックの傾き　ヨコ
         float lsv = Input.GetAxis ("L_Stick_V");//左スティックの傾き　タテ
-
-
-        skyboxMaterial.SetFloat("_Rotation", Mathf.Repeat(skyboxMaterial.GetFloat("_Rotation") - rotateSpeed* Time.deltaTime, 360f));
 
         if (lsh<0&&turnR==false&&turnL==false)//左回転
         {
@@ -150,7 +155,7 @@ public class RotateSkyV2 : MonoBehaviour
         }
         else easeadd=0;
 
-        Debug.Log(easeadd);
+        //Debug.Log(easeadd);
 
         if(easeadd<1.2f)easeadd+=0.03f;
         //従来手法の上下
@@ -188,5 +193,125 @@ public class RotateSkyV2 : MonoBehaviour
             myTransform.localEulerAngles=localAngle;
         }
         */
+    }
+    else if(keyboard==true)//キーボード操作の時
+    {
+        if (Input.GetKey(KeyCode.A)&&turnR==false&&turnL==false)//左回転
+        {
+            TURN=1;
+        //skyboxMaterial.SetFloat("_Rotation", Mathf.Repeat(skyboxMaterial.GetFloat("_Rotation") - rotateSpeed, 360f));
+        worldangle=worldtransform.localEulerAngles;
+        worldangle.y-=rotateSpeed;
+        worldtransform.localEulerAngles=worldangle;
+        
+        localAngle = myTransform.localEulerAngles;
+
+        local_angle_y = localAngle.y; //角度取得
+        local_angle_z = localAngle.z; 
+
+        if(local_angle_y>175)localAngle.y-=PlaneRotateSpeed;//回転させる
+        if(local_angle_z<190)localAngle.z+=PlaneRotateSpeed*2;
+
+        myTransform.localEulerAngles=localAngle;
+
+        }
+        else if (Input.GetKey(KeyCode.D)&&turnR==false&&turnL==false)//右回転
+        {
+            TURN=2;
+        //skyboxMaterial.SetFloat("_Rotation", Mathf.Repeat(skyboxMaterial.GetFloat("_Rotation") + rotateSpeed, 360f));
+        worldangle=worldtransform.localEulerAngles;
+        worldangle.y+=rotateSpeed;
+        worldtransform.localEulerAngles=worldangle;
+        
+        localAngle = myTransform.localEulerAngles;
+
+        local_angle_y = localAngle.y; //角度取得
+        local_angle_z = localAngle.z; 
+
+        if(local_angle_y<185)localAngle.y+=PlaneRotateSpeed;//回転させる
+        if(local_angle_z>170)localAngle.z-=PlaneRotateSpeed*2;
+        
+        myTransform.localEulerAngles=localAngle;
+
+        }
+        else if(Input.GetKeyUp(KeyCode.A)&&turnR==false&&turnL==false&&TURN==1){
+            turnL=true;
+            TURN=0;
+        }
+        else if(Input.GetKeyUp(KeyCode.D)&&turnR==false&&turnL==false&&TURN==2){
+            turnR=true;
+            TURN=0;
+        }
+        else if(turnL==true)
+        {
+        local_angle_y = localAngle.y; //角度取得
+        local_angle_z = localAngle.z; 
+
+        if(local_angle_y!=180.0f)
+        {
+        if(local_angle_y<180.0f)localAngle.y+=PlaneRotateSpeed*3;
+        else local_angle_y=180.0f;
+        }
+
+        if(local_angle_z!=180.0f)
+        {
+        if(local_angle_z>180.0f)localAngle.z-=PlaneRotateSpeed*3;
+        else local_angle_z=180.0f;
+        }
+
+        if(local_angle_z==180.0f&&local_angle_y==180.0f)turnL=false;
+
+        myTransform.localEulerAngles=localAngle;
+        }
+        else if(turnR==true)
+        {
+        local_angle_y = localAngle.y; //角度取得
+        local_angle_z = localAngle.z; 
+
+        if(local_angle_y!=180.0f)
+        {
+        if(local_angle_y>180.0f)localAngle.y-=PlaneRotateSpeed*3;
+        else local_angle_y=180.0f;
+        }
+
+        if(local_angle_z!=180.0f)
+        {
+        if(local_angle_z<180)localAngle.z+=PlaneRotateSpeed*3;
+        else local_angle_z=180.0f;
+        }
+
+        if(local_angle_z==180.0f&&local_angle_y==180.0)turnR=false;
+
+        myTransform.localEulerAngles=localAngle;
+
+        }
+        if(Input.GetKey(KeyCode.S))//上昇
+        {
+            Vector3 xwingz=xwing.localEulerAngles;
+            xwingz.x-=easeadd;
+            if(xwingz.x>275||xwingz.x<265)xwing.localEulerAngles=xwingz;
+        }
+        else if(Input.GetKey(KeyCode.W))//下降
+        {
+            Vector3 xwingz=xwing.localEulerAngles;
+            xwingz.x+=easeadd;
+            if(xwingz.x<85||xwingz.x>275)xwing.localEulerAngles=xwingz;
+        }
+        else easeadd=0;
+
+        if(easeadd<1.2f)easeadd+=0.03f;
+    }
+    if(Input.GetKey(KeyCode.P))//きーぼど操作ORコントローラ操作
+    //shootingにも同じスクリプトあるからそこも書き換えること
+    //MoveChara,moveAimにも同じスクリプトがある
+    {
+        if(keyboard==false)keyboard=true;
+        else keyboard=false;
+    }
 	}
+    public void OnClick()
+    {
+        if(keyboard==false)keyboard=true;
+        else keyboard=false;
+    }
 }
