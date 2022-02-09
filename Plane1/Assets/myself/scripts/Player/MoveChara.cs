@@ -6,6 +6,8 @@ public class MoveChara : MonoBehaviour
 {
     public float speed = 10.0f;
         public Rigidbody rb;
+        private MoveChara characterController;
+        private Vector3 velocity;
 
         private bool keyboard=false;//操作方法についてキーボードかコントローラか
         //RotateSkyV2 にも同じスクリプトがある
@@ -14,6 +16,7 @@ public class MoveChara : MonoBehaviour
         void Start() 
         {
             rb = GameObject.Find("Main (1)").GetComponent<Rigidbody>();
+            
             //rb = GameObject.Find("Player1").GetComponent<Rigidbody>();
         }
  
