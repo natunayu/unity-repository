@@ -88,7 +88,7 @@ public class Shooting : MonoBehaviour
             else if(tri<=0)
             {
               timer=0;
-              gunlevel-=gunheal;  
+              if(gunlevel>=0)gunlevel-=gunheal;  
             } 
         }
         if(keyboard==true&&goshoot==true)
@@ -130,7 +130,7 @@ public class Shooting : MonoBehaviour
             else
             {
                 timer=0;
-                gunlevel-=gunheal;
+                if(gunlevel>=0)gunlevel-=gunheal;
             }
         }
 

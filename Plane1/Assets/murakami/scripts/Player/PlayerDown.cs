@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerDown : MonoBehaviour
 {
+    public static int HP=5;
    [SerializeField] private float p_life = 10;
 
     [SerializeField]
@@ -14,16 +15,24 @@ public class PlayerDown : MonoBehaviour
 
     public Slider lifeslider;
 
+    //残りのライフアイコン
+    public GameObject life5;
+    public GameObject life4;
+    public GameObject life3;
+    public GameObject life2;
+    public GameObject life1;
+    
+
     void Start()
     {
         maxlife=p_life;
         lifeslider.value=maxlife;
+        lifeIcon();
     }
 
     // Update is called once per frame
     void Update()
     {
-    
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -50,6 +59,15 @@ public class PlayerDown : MonoBehaviour
       Destroy(gameObject);
       
       FadeManager.Instance.LoadScene ("SampleScene", 2.0f);
+      HP-=1;
       }
+    }
+    void lifeIcon()//HPの数値に応じてライフのアイコン数を変更します
+    {
+        if(HP<=4)life5.SetActive(false);
+        if(HP<=3)life4.SetActive(false);
+        if(HP<=2)life3.SetActive(false);
+        if(HP<=1)life2.SetActive(false);
+        if(HP==0)life1.SetActive(false);
     }
 }
