@@ -30,6 +30,8 @@ public class moveAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        KeyOrMouse();
+
         rsh = Input.GetAxis ("R_Stick_H");
         rsv = Input.GetAxis ("R_Stick_V");
 
@@ -60,7 +62,7 @@ public class moveAim : MonoBehaviour
         else
         {
             Vector3 position=Input.mousePosition;
-            if(Input.GetMouseButton(0))
+            //if(Input.GetMouseButton(0))
             {
                 float distx=position.x-tempx;
                 float disty=position.y-tempy;
@@ -75,19 +77,21 @@ public class moveAim : MonoBehaviour
                 tempx=position.x;
                 tempy=position.y;
             }
-            else
+            //else
             {
                 tempx=position.x;
                 tempy=position.y;
             }
 
         }
-            if(Input.GetKey(KeyCode.P))//きーぼど操作ORコントローラ操作
-            //shootingにも同じスクリプトあるからそこも書き換えること
-            //MoveChara,moveAimにも同じスクリプトがある
-            {
-                if(keyboard==false)keyboard=true;
-                else keyboard=false;
-            }
+    }
+    public void KeyOrMouse()//キーボードで操作するかコントローラで操作するかの確認
+    {
+        Transform myTransform = GameObject.Find("ControllWay").transform;
+ 
+        Vector3 worldPos = myTransform.position;
+        float y=worldPos.y;
+        if(y>0)keyboard=false;
+        else if(y<0) keyboard=true;
     }
 }

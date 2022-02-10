@@ -37,13 +37,19 @@ public class PlayerDown : MonoBehaviour
           if(p_life>maxlife) p_life=maxlife;
           Destroy(collision.gameObject);
       }
+      else//別のオブジェクトに当たったら即死
+      {
+          p_life-=maxlife;
+      }
       lifeslider.value=p_life;
 
-       Debug.Log(collision.gameObject.name+" "+p_life); // ぶつかった相手の名前を取得
+       //Debug.Log(collision.gameObject.name+" "+p_life); // ぶつかった相手の名前を取得
 
       if(p_life<=0){
       Instantiate(explosionPrefab, transform.position, Quaternion.identity);
       Destroy(gameObject);
+      
+      FadeManager.Instance.LoadScene ("SampleScene", 2.0f);
       }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shooting : MonoBehaviour
 {
@@ -21,6 +22,13 @@ public class Shooting : MonoBehaviour
     private bool keyboard=false;//操作方法についてキーボードかコントローラか
     //RotateSkyV2 にも同じスクリプトがある
     //MoveChara,moveAimにも同じスクリプトがある
+
+    public Slider gunslider;//銃の連射できないようにするすらいだー
+    private float maxlevel=10;//スライダーの最大値
+    private float gunlevel=0.0f;//今どれくらい撃ったのかの判定
+    private float gunfire=0.5f;//どのくらい増やすか
+    private float gunheal=0.01f;//どのくらい減らすか
+    private bool goshoot=true;//連射しすぎてオーバーヒートしているか否か
  
 	// Use this for initialization
 	void Start () {
@@ -35,10 +43,12 @@ public class Shooting : MonoBehaviour
 	void Update () {
         // z キーが押された時
 
+        KeyOrMouse();
+
         trans.transform.LookAt(target.transform);
         trans2.transform.LookAt(target.transform);
         
-        if(keyboard==false)
+        if(keyboard==false&&goshoot==true)
         {
             float tri = Input.GetAxis ("L_R_Trigger");
             if (tri>0){
@@ -66,17 +76,22 @@ public class Shooting : MonoBehaviour
                 force = GameObject.Find("FireL").gameObject.transform.forward * speed;
                 bullets2.GetComponent<Rigidbody>().AddForce(force,ForceMode.Impulse);
                 timer++;
+                gunlevel+=gunfire;
                 }
                 else if(timer<30)
                 {
                     timer++;
                 }
-                else timer=0;
+                else if(timer>=30) timer=0;
 
             }
-            else if(tri<=0) timer=0;
+            else if(tri<=0)
+            {
+              timer=0;
+              gunlevel-=gunheal;  
+            } 
         }
-        if(keyboard==true)
+        if(keyboard==true&&goshoot==true)
         {
             if (Input.GetMouseButton(0))
             {
@@ -99,6 +114,7 @@ public class Shooting : MonoBehaviour
 
 
                 // Rigidbodyに力を加えて発射
+                gunlevel+=gunfire;
                force = GameObject.Find("FireR").gameObject.transform.forward * speed;
                 bullets.GetComponent<Rigidbody>().AddForce(force,ForceMode.Impulse);
                 force = GameObject.Find("FireL").gameObject.transform.forward * speed;
@@ -109,19 +125,34 @@ public class Shooting : MonoBehaviour
                 {
                     timer++;
                 }
-                else timer=0;
+                else if(timer>=30)timer=0;
+            }
+            else
+            {
+                timer=0;
+                gunlevel-=gunheal;
             }
         }
 
-        
-        if(Input.GetKey(KeyCode.P))//きーぼど操作ORコントローラ操作
-        //shootingにも同じスクリプトあるからそこも書き換えること
-        //MoveChara,moveAimにも同じスクリプトがある
+        if(gunlevel>=maxlevel)//オーバーヒート決定
         {
-            if(keyboard==false)keyboard=true;
-            else keyboard=false;
+            goshoot=false;//撃てなくします
         }
-        
-		
+        if(goshoot==false)
+        {
+            gunlevel-=gunheal;
+            if(gunlevel<=0)goshoot=true;//銃を撃てるように
+        }
+
+        gunslider.value=gunlevel;//とりあえずスライダーの変更		
 	}
+    public void KeyOrMouse()//キーボードで操作するかコントローラで操作するかの確認
+    {
+        Transform myTransform = GameObject.Find("ControllWay").transform;
+ 
+        Vector3 worldPos = myTransform.position;
+        float y=worldPos.y;
+        if(y>0)keyboard=false;
+        else if(y<0) keyboard=true;
+    }
 }

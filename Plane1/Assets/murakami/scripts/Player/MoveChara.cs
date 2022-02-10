@@ -19,13 +19,17 @@ public class MoveChara : MonoBehaviour
             
             //rb = GameObject.Find("Player1").GetComponent<Rigidbody>();
         }
+        void Update()
+        {
+            KeyOrMouse();
+        }
  
         void FixedUpdate() 
         {
             //float x =  Input.GetAxis("Horizontal") * speed;
             //float z = Input.GetAxis("Vertical") * speed;
             //rb.AddForce(transform.forward*20,ForceMode.Force);
-            float lsv = Input.GetAxis ("L_Stick_V");//左スティックの傾き　タテ
+            //float lsv = Input.GetAxis ("L_Stick_V");//左スティックの傾き　タテ
             /*if(lsv!=0)
             {
                /* Transform myTransform = GameObject.Find("Main (1)").transform;
@@ -54,16 +58,18 @@ public class MoveChara : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.Space)) 
                 {
-                    Debug.Log("aaa");
+                    //Debug.Log("aaa");
                 transform.position += transform.forward*2;
                 }
             }
-            if(Input.GetKey(KeyCode.P))//きーぼど操作ORコントローラ操作
-            //shootingにも同じスクリプトあるからそこも書き換えること
-            //MoveChara,moveAimにも同じスクリプトがある
-            {
-                if(keyboard==false)keyboard=true;
-                else keyboard=false;
-            }
         }
+        public void KeyOrMouse()//キーボードで操作するかコントローラで操作するかの確認
+    {
+        Transform myTransform = GameObject.Find("ControllWay").transform;
+ 
+        Vector3 worldPos = myTransform.position;
+        float y=worldPos.y;
+        if(y>0)keyboard=false;
+        else if(y<0) keyboard=true;
+    }
 }

@@ -44,6 +44,7 @@ public class RotateSkyV2 : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
+        KeyOrMouse();
 
         skyboxMaterial.SetFloat("_Rotation", Mathf.Repeat(skyboxMaterial.GetFloat("_Rotation") - rotateSpeed* Time.deltaTime, 360f));
 
@@ -301,17 +302,20 @@ public class RotateSkyV2 : MonoBehaviour
 
         if(easeadd<1.2f)easeadd+=0.03f;
     }
-    if(Input.GetKey(KeyCode.P))//きーぼど操作ORコントローラ操作
-    //shootingにも同じスクリプトあるからそこも書き換えること
-    //MoveChara,moveAimにも同じスクリプトがある
-    {
-        if(keyboard==false)keyboard=true;
-        else keyboard=false;
-    }
+    
 	}
     public void OnClick()
     {
         if(keyboard==false)keyboard=true;
         else keyboard=false;
+    }
+    public void KeyOrMouse()//キーボードで操作するかコントローラで操作するかの確認
+    {
+        Transform myTransform = GameObject.Find("ControllWay").transform;
+ 
+        Vector3 worldPos = myTransform.position;
+        float y=worldPos.y;
+        if(y>0)keyboard=false;
+        else if(y<0) keyboard=true;
     }
 }
