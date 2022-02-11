@@ -9,14 +9,14 @@ public class ShotBullet : MonoBehaviour
     private GameObject bullet;
     //　弾を飛ばす間隔時間
     [SerializeField]
-    private float waitTime = 1f;
+    private float waitTime = 5.0f;
     //　経過時間
     private float elapsedTime = 0f;
     //　砲台の弾が出てくる場所
     private Transform bulletHoleTra;
     //　弾を飛ばす力
     [SerializeField]
-    private float power = 10f;
+    private float power = 0.1f;
     //　弾を消すまでの時間
     [SerializeField]
     private float deleteTime = 10f;

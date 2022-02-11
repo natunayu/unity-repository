@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerDown : MonoBehaviour
 {
     public static int HP=5;
+    private int maxHP=5;
    [SerializeField] private float p_life = 10;
 
     [SerializeField]
@@ -36,7 +37,7 @@ public class PlayerDown : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-      if(collision.gameObject.name=="EnemyBullet(Clone)")
+      if(collision.gameObject.name=="EnemyBullet(Clone)"||collision.gameObject.name=="bullet(Clone)")
       {
           p_life-=1;
       }
@@ -58,8 +59,15 @@ public class PlayerDown : MonoBehaviour
       Instantiate(explosionPrefab, transform.position, Quaternion.identity);
       Destroy(gameObject);
       
-      FadeManager.Instance.LoadScene ("SampleScene", 2.0f);
-      HP-=1;
+        if(HP>0)
+        {
+            FadeManager.Instance.LoadScene ("SampleScene", 2.0f);
+              HP-=1;
+        }
+        else {
+            FadeManager.Instance.LoadScene ("GameOver", 2.0f);
+              HP=maxHP;
+        }
       }
     }
     void lifeIcon()//HPの数値に応じてライフのアイコン数を変更します
@@ -68,6 +76,6 @@ public class PlayerDown : MonoBehaviour
         if(HP<=3)life4.SetActive(false);
         if(HP<=2)life3.SetActive(false);
         if(HP<=1)life2.SetActive(false);
-        if(HP==0)life1.SetActive(false);
+        if(HP<=0)life1.SetActive(false);
     }
 }
