@@ -27,11 +27,8 @@ public class MiniMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemy!=null) getEnemyPos(enemy,target);
-        else enemyafterDead(enemy,target);
-
-        if(enemy2!=null) getEnemyPos(enemy2,target2);
-        else enemyafterDead(enemy2,target2);
+        boolcheck(enemy,target);//これをそれぞれの敵キャラ毎に書けばOK
+        boolcheck(enemy2,target2);
     }
     void getEnemyPos(Transform enemy,Image target)
     {
@@ -53,5 +50,10 @@ public class MiniMap : MonoBehaviour
             PlayerDir=player.position;
 
             rt.anchoredPosition = new Vector2(PlayerDir.x + offset.x, PlayerDir.z * r + offset.y);
+    }
+    void boolcheck(Transform enemy,Image target)
+    {
+        if(enemy!=null) getEnemyPos(enemy,target);
+        else enemyafterDead(enemy,target);
     }
 }
