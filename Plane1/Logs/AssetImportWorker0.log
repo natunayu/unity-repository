@@ -15,11 +15,11 @@ C:/Users/mgmyu/OneDrive/ドキュメント/GitHub/unity-repository/Plane1
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63523
+60988
 Successfully changed project path to: C:/Users/mgmyu/OneDrive/ドキュメント/GitHub/unity-repository/Plane1
 C:/Users/mgmyu/OneDrive/ドキュメント/GitHub/unity-repository/Plane1
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 24.44 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 24.86 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.4f1 (0abb6314276a)
 [Subsystems] Discovering subsystems at path D:/Unity/2020.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -37,261 +37,165 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2020.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2020.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2020.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56060
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56460
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2020.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000787 seconds.
+Registered in 0.000748 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 26.31 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 26.59 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.138 seconds
+- Completed reload, in  1.123 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000837 seconds.
+Registered in 0.000705 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.693 seconds
+- Completed reload, in  0.717 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
 Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.15 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
 Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1185 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.8 MB.
+Unloading 1184 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 64.7 MB.
 System memory in use after: 64.8 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1634.
-Total: 1.637900 ms (FindLiveObjects: 0.130800 ms CreateObjectMapping: 0.036200 ms MarkObjects: 1.406100 ms  DeleteObjects: 0.064000 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1633.
+Total: 1.671700 ms (FindLiveObjects: 0.131800 ms CreateObjectMapping: 0.034600 ms MarkObjects: 1.434900 ms  DeleteObjects: 0.069200 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/murakami/scripts/Enemy/EnemyRotate.cs
-  artifactKey: Guid(688212cc606e24947ba32bcffbc81c3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/Enemy/EnemyRotate.cs using Guid(688212cc606e24947ba32bcffbc81c3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a4075f152074c9810e055d681760778') in 0.031984 seconds
-  Import took 0.035108 seconds .
+  path: Assets/murakami/FBX/StarShip v4.fbx
+  artifactKey: Guid(aa4bed98c34d2184dbf02e953ec2132b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/murakami/FBX/StarShip v4.fbx using Guid(aa4bed98c34d2184dbf02e953ec2132b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe4ae92f51af7d9ea42b2772eaa8ed83') in 0.655320 seconds
+  Import took 0.658603 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000321 seconds.
-  path: Assets/murakami/scripts/Enemy/EnemyDown.cs
-  artifactKey: Guid(ddda174d8dba4ca47b6a401bf9b94f0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/Enemy/EnemyDown.cs using Guid(ddda174d8dba4ca47b6a401bf9b94f0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e79de5febd2283819f83a3c013b794ba') in 0.001369 seconds
-  Import took 0.004063 seconds .
+  Time since last request: 360.868271 seconds.
+  path: Assets/murakami/materials/mapEnemy.mat
+  artifactKey: Guid(7993a9cb08071e347967232eae6955c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/murakami/materials/mapEnemy.mat using Guid(7993a9cb08071e347967232eae6955c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6e5991bbbc2cc38c795d034ce5ca85f') in 0.246003 seconds
+  Import took 0.250716 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000208 seconds.
-  path: Assets/murakami/scripts/Enemy/ShootforPlayer.cs
-  artifactKey: Guid(424d72145979f044485f37c29412bd6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/Enemy/ShootforPlayer.cs using Guid(424d72145979f044485f37c29412bd6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8620eb3c388a0e812f7953004489edf') in 0.001948 seconds
-  Import took 0.005861 seconds .
+  Time since last request: 0.000271 seconds.
+  path: Assets/murakami/materials/Minimap.mat
+  artifactKey: Guid(28262f115a62e9b4da4f34a18fc6c5c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/murakami/materials/Minimap.mat using Guid(28262f115a62e9b4da4f34a18fc6c5c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '238e4f1b119ffff7fe456edfd7c3f0f6') in 0.013486 seconds
+  Import took 0.018011 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 10.621126 seconds.
-  path: Assets/murakami/scripts/CDebug.cs
-  artifactKey: Guid(f0308c214cdfd65468b4f1b51b3c29f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/CDebug.cs using Guid(f0308c214cdfd65468b4f1b51b3c29f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e4e5cacaeba6d3ca6ea5684585d187b') in 0.001404 seconds
-  Import took 0.004451 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.271500 seconds.
-  path: Assets/murakami/scripts/CDebug.cs
-  artifactKey: Guid(f0308c214cdfd65468b4f1b51b3c29f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/CDebug.cs using Guid(f0308c214cdfd65468b4f1b51b3c29f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e4e5cacaeba6d3ca6ea5684585d187b') in 0.001316 seconds
-  Import took 0.004669 seconds .
+  Time since last request: 0.000412 seconds.
+  path: Assets/murakami/materials/mapPlayer.mat
+  artifactKey: Guid(197676e85e4e40240b886521726651b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/murakami/materials/mapPlayer.mat using Guid(197676e85e4e40240b886521726651b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bc82eae717afb97691e789086b6ff61') in 0.017565 seconds
+  Import took 0.022990 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000606 seconds.
+Registered in 0.002110 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.065 seconds
+Platform modules already initialized, skipping
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1165 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 66.7 MB.
+System memory in use after: 66.8 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1679.
+Total: 1.710700 ms (FindLiveObjects: 0.127500 ms CreateObjectMapping: 0.034400 ms MarkObjects: 1.533900 ms  DeleteObjects: 0.013900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 54.356509 seconds.
+  path: Assets/murakami/materials/motherShip.mat
+  artifactKey: Guid(c879ab7a3854e804fb7f42ac1e837aec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/murakami/materials/motherShip.mat using Guid(c879ab7a3854e804fb7f42ac1e837aec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0c31a73f0a540d3c6f2866ab21f27fb') in 0.053060 seconds
+  Import took 0.056168 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001279 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.683 seconds
+- Completed reload, in  1.853 seconds
 Platform modules already initialized, skipping
 Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
 Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1166 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 63.3 MB.
-System memory in use after: 63.4 MB.
+Unloading 1165 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 66.7 MB.
+System memory in use after: 66.8 MB.
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1637.
-Total: 2.116200 ms (FindLiveObjects: 0.110000 ms CreateObjectMapping: 0.026200 ms MarkObjects: 1.967800 ms  DeleteObjects: 0.011300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 48.198052 seconds.
-  path: Assets/murakami/scripts/Player/moveAim.cs
-  artifactKey: Guid(28a275cc21fec8442ba56dac4561bdc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/Player/moveAim.cs using Guid(28a275cc21fec8442ba56dac4561bdc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f86f7aa3fd353d1f92255f1ccda4360') in 0.004046 seconds
-  Import took 0.007079 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000251 seconds.
-  path: Assets/murakami/scripts/SampleScene.cs
-  artifactKey: Guid(af4bc65d1e064b84d92bf402df0ddff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/SampleScene.cs using Guid(af4bc65d1e064b84d92bf402df0ddff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6a2e9a50774fc2d56b2169498be03cd') in 0.001388 seconds
-  Import took 0.004202 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.232916 seconds.
-  path: Assets/murakami/scripts/Player/Shooting.cs
-  artifactKey: Guid(14c02f540f96cc046838ad4e5d85340c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/Player/Shooting.cs using Guid(14c02f540f96cc046838ad4e5d85340c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0fd2420969017ea6b091180c256c48a') in 0.001894 seconds
-  Import took 0.004875 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.013408 seconds.
-  path: Assets/murakami/scripts/Player/Shooting.cs
-  artifactKey: Guid(14c02f540f96cc046838ad4e5d85340c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/Player/Shooting.cs using Guid(14c02f540f96cc046838ad4e5d85340c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0fd2420969017ea6b091180c256c48a') in 0.001286 seconds
-  Import took 0.004944 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.492760 seconds.
-  path: Assets/murakami/scripts/Player/MoveChara.cs
-  artifactKey: Guid(68e8e68a65b214c42990094c7fc56720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/Player/MoveChara.cs using Guid(68e8e68a65b214c42990094c7fc56720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e14d53cbe19df6fb4c17d990857e9de') in 0.001682 seconds
-  Import took 0.005351 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.102910 seconds.
-  path: Assets/murakami/scripts/Player/MoveChara.cs
-  artifactKey: Guid(68e8e68a65b214c42990094c7fc56720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/Player/MoveChara.cs using Guid(68e8e68a65b214c42990094c7fc56720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e14d53cbe19df6fb4c17d990857e9de') in 0.003375 seconds
-  Import took 0.008452 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.828526 seconds.
-  path: Assets/murakami/scripts/GameOver/RotateSky.cs
-  artifactKey: Guid(f1f1318cd5ea42844b980d27be7497cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/GameOver/RotateSky.cs using Guid(f1f1318cd5ea42844b980d27be7497cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '282b3a9020855609111db53f967c2cb3') in 0.002877 seconds
-  Import took 0.007497 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.402536 seconds.
-  path: Assets/murakami/scripts/Enemy/BulletDestroyEnemy.cs
-  artifactKey: Guid(c12329b17e396444ca1cf164482ff599) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/Enemy/BulletDestroyEnemy.cs using Guid(c12329b17e396444ca1cf164482ff599) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '857f8081b318ffee4e07849ea0efb408') in 0.002716 seconds
-  Import took 0.009275 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.176130 seconds.
-  path: Assets/murakami/scripts/miniMap/Minimap1.cs
-  artifactKey: Guid(37bf1111dfe4a1a49a3f66263738cf60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/miniMap/Minimap1.cs using Guid(37bf1111dfe4a1a49a3f66263738cf60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ae886e4a657d70dd517b7831ac73b09') in 0.001623 seconds
-  Import took 0.004893 seconds .
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1683.
+Total: 1.526700 ms (FindLiveObjects: 0.116700 ms CreateObjectMapping: 0.027800 ms MarkObjects: 1.370400 ms  DeleteObjects: 0.010700 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000667 seconds.
+Registered in 0.002476 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.64 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.243 seconds
+- Completed reload, in  1.566 seconds
 Platform modules already initialized, skipping
 Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
 Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 2.70 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1165 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 63.3 MB.
-System memory in use after: 63.4 MB.
+System memory in use before: 66.7 MB.
+System memory in use after: 66.9 MB.
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1639.
-Total: 1.478100 ms (FindLiveObjects: 0.140900 ms CreateObjectMapping: 0.037800 ms MarkObjects: 1.283600 ms  DeleteObjects: 0.014800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.456546 seconds.
-  path: Assets/murakami/scripts/miniMap/MiniMap.cs
-  artifactKey: Guid(12c2e7099816bc648bd98dce1e9662a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/miniMap/MiniMap.cs using Guid(12c2e7099816bc648bd98dce1e9662a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68c57db511ad7aef5cd0ca9fde34afb2') in 0.003026 seconds
-  Import took 0.006234 seconds .
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1686.
+Total: 4.492800 ms (FindLiveObjects: 0.436000 ms CreateObjectMapping: 0.196900 ms MarkObjects: 3.837900 ms  DeleteObjects: 0.019400 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002469 seconds.
+Registered in 0.003151 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.41 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.01 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.793 seconds
+- Completed reload, in  2.442 seconds
 Platform modules already initialized, skipping
 Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
 Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.90 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1165 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 63.3 MB.
-System memory in use after: 63.4 MB.
+System memory in use before: 66.8 MB.
+System memory in use after: 66.9 MB.
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1642.
-Total: 2.276200 ms (FindLiveObjects: 0.196000 ms CreateObjectMapping: 0.066900 ms MarkObjects: 1.995700 ms  DeleteObjects: 0.015600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 115.782422 seconds.
-  path: Assets/murakami/scripts/miniMap/MiniMap.cs
-  artifactKey: Guid(12c2e7099816bc648bd98dce1e9662a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/miniMap/MiniMap.cs using Guid(12c2e7099816bc648bd98dce1e9662a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '044f2dfd1a751e4dd3f3a2d526ddbbf4') in 0.004103 seconds
-  Import took 0.008080 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000811 seconds.
-  path: Assets/murakami/scripts/miniMap/MiniMap.cs
-  artifactKey: Guid(12c2e7099816bc648bd98dce1e9662a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/murakami/scripts/miniMap/MiniMap.cs using Guid(12c2e7099816bc648bd98dce1e9662a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '044f2dfd1a751e4dd3f3a2d526ddbbf4') in 0.002096 seconds
-  Import took 0.006685 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002134 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.42 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.233 seconds
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1165 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 63.3 MB.
-System memory in use after: 63.4 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1645.
-Total: 2.054600 ms (FindLiveObjects: 0.227000 ms CreateObjectMapping: 0.081200 ms MarkObjects: 1.730600 ms  DeleteObjects: 0.014400 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1689.
+Total: 3.203000 ms (FindLiveObjects: 0.249500 ms CreateObjectMapping: 0.075800 ms MarkObjects: 2.846600 ms  DeleteObjects: 0.029300 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
